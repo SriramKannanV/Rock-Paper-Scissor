@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Uncial+Antiqua&display=swap');
+@import "tailwindcss";
+
+@theme{
+    --color-mybg: #0F1115;
+    --color-myprimary: #10B981;
+    --color-myaccent: #F59E0B;
+    --font-mybody: "Lora", serif;
+    --font-myheading: "Uncial Antiqua", system-ui;
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    20%, 60% {transform: translateX(-10px);}
+    40%, 80% {transform: translateX(10px);}
+}
+
+.animate-shake{
+    animation: shake 0.4s ease-in-out;
+}
