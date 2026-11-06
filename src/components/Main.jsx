@@ -77,7 +77,7 @@ const Main = () => {
   };
 
   return (
-    <div className="container px-20 w-full text-white">
+    <div className="container lg:px-20 px-4 w-full text-white">
       <nav className="h-20 flex justify-end items-center-safe">
         <button className="flex gap-2 items-center border-2 py-2 px-5 h-fit rounded-md cursor-pointer transition-all duration-200 ease-in-out hover:bg-white hover:text-mybg">
           <a
@@ -93,18 +93,18 @@ const Main = () => {
       </nav>
 
       <section>
-        <h1 className="text-center font-myheading text-6xl my-16">
+        <h1 className="text-center font-myheading text-6xl lg:my-16 my-8">
           Rock Paper Scissor
         </h1>
 
-        <section className="flex">
-          <section className="w-1/2 border-r-2 border-dashed">
+        <section className="lg:flex">
+          <section className="lg:w-1/2 lg:border-r-2 lg:border-dashed">
             <h3 className="text-center text-3xl font-semibold mb-2">You</h3>
             <p className="bg-myprimary w-fit py-1 px-6 rounded-full font-medium mx-auto">
               Win Streak - {streak}
             </p>
 
-            <section className="flex mt-20 gap-10 justify-center">
+            <section className="flex mt-20 lg:gap-10 gap-4 justify-center mb-16 lg:mb-0">
               {sign.map((data) => {
                 return (
                   <section
@@ -120,12 +120,12 @@ const Main = () => {
             </section>
           </section>
 
-          <section className="w-1/2">
+          <section className="lg:w-1/2">
             <h3 className="text-center text-3xl font-semibold mb-2">
               Computer
             </h3>
             {computerChoice && (
-              <section className="text-white bg-myaccent py-3 w-40 rounded-2xl text-center mt-30 mx-auto">
+              <section className="text-white bg-myaccent py-3 w-40 rounded-2xl text-center lg:mt-30 mt-8 mx-auto">
                 <i className={computerChoice.icon}></i>
                 <h6 className="font-myheading text-xl">
                   {computerChoice.name}
@@ -138,9 +138,9 @@ const Main = () => {
 
       {result && (
         <section
-          className={`${resultStyle(result)} ${result == "LOSE" ? "animate-shake" : ""} h-40 w-1/2 m-auto mt-20 flex items-center justify-center rounded-full shadow-2xl`}
+          className={`${resultStyle(result)} ${result == "LOSE" ? "animate-shake" : ""} h-40 lg:w-1/2 w-80% m-auto mt-20 flex items-center justify-center rounded-full shadow-2xl`}
         >
-          <h1 className="font-myheading text-8xl">{result}</h1>
+          <h1 className="font-myheading lg:text-8xl text-7xl">{result}</h1>
         </section>
       )}
 
