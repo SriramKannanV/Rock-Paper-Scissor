@@ -11,6 +11,7 @@ const Main = () => {
     "Hi! I just played your Rock Paper Scissors game and wanted to connect.";
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+  const [activeId, setActiveId] = useState(null);
 
   const handlePick = (data) => {
     setResult(null);
@@ -88,7 +89,7 @@ const Main = () => {
           >
             Contact Me
           </a>{" "}
-          <i class="fa-brands fa-whatsapp text-2xl"></i>
+          <i className="fa-brands fa-whatsapp text-2xl"></i>
         </button>
       </nav>
 
@@ -109,8 +110,11 @@ const Main = () => {
                 return (
                   <section
                     key={data.id}
-                    onClick={() => handlePick(data)}
-                    className="text-myaccent border-3 border-myaccent py-3 w-40 rounded-2xl text-center hover:text-white hover:bg-myaccent hover:shadow-lg hover:scale-115 hover:shadow-myaccent transition-all duration-200 ease-in-out cursor-pointer"
+                    onClick={() => {
+                      (handlePick(data), setActiveId(data.id));
+                    }}
+                    className={`border-3 border-myaccent py-3 w-40 rounded-2xl text-center hover:text-white hover:bg-myaccent hover:shadow-lg 
+                                hover:scale-115 hover:shadow-myaccent transition-all duration-200 ease-in-out cursor-pointer ${activeId === data.id ? "text-white bg-myaccent" : "text-myaccent"}`}
                   >
                     <i className={data.icon}></i>
                     <h6 className="font-myheading text-xl">{data.name}</h6>
@@ -150,6 +154,7 @@ const Main = () => {
             setStreak(0);
             setResult(null);
             setComputerChoice(null);
+            setActiveId(null);
           }}
           className="py-2 px-5 h-fit rounded-md cursor-pointer bg-myprimary text-mybg font-semibold text-lg transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-115 hover:shadow-sky-200"
         >
