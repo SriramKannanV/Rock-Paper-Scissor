@@ -1,16 +1,61 @@
-# React + Vite
+# Rock Paper Scissors ✊✋✌️
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, interactive, and gamified take on the classic Rock Paper Scissors game. Built with React and Tailwind CSS, this project focuses on sleek UI/UX, dynamic state management, and engaging micro-interactions.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+https://new-rockpaperscissor.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
+* **Interactive Gameplay:** Play against a randomized computer opponent with instant visual feedback.
+* **Win Streak Tracker:** Gamified state tracking that counts consecutive wins to keep players engaged.
+* **Dynamic UI States:** The result banner dynamically changes colors (Emerald Green for Win, Red for Lose, Gray for Draw) with glassmorphic glowing effects.
+* **Animations:** Features a custom CSS shake animation for losses and a canvas-based confetti blast for wins.
+* **WhatsApp Integration:** A "Click to Chat" contact button utilizing secure environment variables.
+* **Fully Responsive:** Optimized for both desktop and mobile viewing.
 
-## React Compiler
+## 🛠️ Tech Stack
+* **Frontend:** React.js (built with Vite)
+* **Styling:** Tailwind CSS
+* **Animations:** `canvas-confetti`, Custom CSS Keyframes
+* **Deployment:** Netlify
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Local Setup & Installation
 
-## Expanding the Oxlint configuration
+To run this project locally on your machine, follow these steps:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+cd your-repo-name
+```
+
+**2. Install dependencies:**
+```bash
+npm install
+```
+
+**3. Configure Environment Variables:**
+
+This project uses a .env file to securely store the WhatsApp contact number.
+Create a file named .env in the root directory.
+Add your phone number (including country code, but without the + sign).
+```bash
+VITE_WHATSAPP_NUMBER=919876543210
+```
+
+**4. Start the development server:**
+```bash
+npm run dev
+```
+
+## 📂 Project Structure highlights
+
+App.jsx - Main game logic, state management, and UI rendering.
+
+tailwind.css / index.css - Custom theme variables, font imports (Uncial Antiqua & Lora), and custom keyframe animations.
+
+.env - Environment variables (ignored by Git).
+
+## 👨‍💻 Author
+
+Sriram Kannan V
